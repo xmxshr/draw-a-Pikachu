@@ -3,16 +3,6 @@
     let codePreview = document.querySelector('#code')
     let styleTag = document.querySelector('#styleTag')
     let n = 0
-    // let id = setTimeout(function getCode(){
-    //   n+=1
-    //   codePreview.innerHTML = code.substring(0,n)
-    //   style.innerText = code.substring(0,n)
-    //   if(n<code.length){
-    //     let id = setTimeout(getCode(), 200)
-    //   }else{
-    //     fn && fn.call()
-    //   }
-    // }, 200)
     let id  = setInterval(function(){
       n+=1 
       codePreview.innerHTML = code.substring(0,n)
@@ -156,7 +146,7 @@
     overflow: hidden;
   }
   /*
-  * 最后当然要记得画出它的舌头才行
+  * 还要记得画出它的舌头才行
   */
   .mouth::before{
     content: '';
@@ -168,6 +158,12 @@
     left: 50%;
     transform: translateX(-50%);
     background: #FF3F54;
+  }
+  /*
+  * 最后的最后当然要让皮卡丘的大眼睛眨动起来了
+  */
+  .eye{
+    animation: hei 4s 2s infinite linear;
   }
   /*
   * 好啦，这就是我们画好的皮卡丘啦
