@@ -3,17 +3,36 @@
     let codePreview = document.querySelector('#code')
     let styleTag = document.querySelector('#styleTag')
     let n = 0
-    let id  = setInterval(function(){
-      n+=1 
+    let time = 20
+    // let id  = setInterval(function(){
+    //   n+=1 
+    //   codePreview.innerHTML = code.substring(0,n)
+    //   styleTag.innerHTML = code.substring(0,n)
+    //   codePreview.scrollTop = codePreview.scrollHeight
+    //   if(n>=code.length){
+    //     window.clearInterval(id)
+    //   }
+    // },20) 
+    let id = setTimeout(function run(){
+      n+=1
       codePreview.innerHTML = code.substring(0,n)
       styleTag.innerHTML = code.substring(0,n)
-      codePreview.scrollTop = codePreview.scrollHeight
-      if(n>=code.length){
-        window.clearInterval(id)
+      if(n<=code.length){
+        id = setTimeout(run, time) //point
       }
-    },20)
-    
+    },time)
+    let action = document.querySelector('.action')
+    action.addEventListener('click', function(e){
+      let target = e.target
+      if(target.classList.contains('finish')){
+        clearInterval(id)
+        codePreview.innerHTML = code
+        styleTag.innerHTML = code
+      }
+    })
   }
+
+
   let code = `
   /*
   * 今天我们来画一个皮卡丘。
@@ -170,4 +189,7 @@
   */
   `
   writeCode(code)
+  
+
+
 })()

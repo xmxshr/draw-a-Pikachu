@@ -1,6 +1,17 @@
 *{margin: 0;padding: 0;box-sizing: border-box;}
 *::before{box-sizing: border-box;}
 *::after{box-sizing: border-box;}
+@keyframes hei{
+  0% {
+    transform: rotateX(0)
+  }
+  5%{
+    transform: rotateX(-90deg)
+  }
+  10%{
+    transform: rotateX(0)
+  }
+}
 body{
   height: 100vh;
   display: flex;
@@ -18,14 +29,15 @@ body{
   overflow: hidden;
   height: 100%;
 }
-@keyframes hei{
-  0% {
-    transform: rotateX(0)
-  }
-  5%{
-    transform: rotateX(-90deg)
-  }
-  10%{
-    transform: rotateX(0)
-  }
+.action{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.action input{
+  font-size: 15px;
+  background: #eee;
+  padding: 2px 10px;
+  border-radius: 8px;
+  outline: none;
 }
