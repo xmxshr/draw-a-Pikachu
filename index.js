@@ -17,6 +17,7 @@
       n+=1
       codePreview.innerHTML = code.substring(0,n)
       styleTag.innerHTML = code.substring(0,n)
+      codePreview.scrollTop = codePreview.scrollHeight
       if(n<=code.length){
         id = setTimeout(run, time) //point
       }
